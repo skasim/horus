@@ -12,28 +12,21 @@ python script, combined with a cron job, kicks off a MacOS notification reminder
 ### Prerequisites
 
 These instructions are only for Mac OS and the script utilizes Python3. Here are excellent guides to installing
-[Homebrew and Python3](https://docs.python-guide.org/starting/install3/osx/) as well as [Pip and Virtualenv]
-(https://docs.python-guide.org/dev/virtualenvs/)
+[Homebrew and Python3](https://docs.python-guide.org/starting/install3/osx/) as well as [Pip and Virtualenv](https://docs.python-guide.org/dev/virtualenvs/)
 
 ```
 brew install terminal-notifier
 ```
-Make a note of where brew installs terminal-notifier. This is important because this value is hardcoded in the script
-. Not ideal, but cron jobs don't necessarily run from the same directory where the script is located, so using
+Make a note of where brew installs terminal-notifier. This is important because this value is hardcoded in the python script. Not ideal, but cron jobs don't necessarily run from the same directory where the script is located, so using
 relative paths does not work. Also, Cron doesn't like aliases in bashrc because the default shell option for
-non-interactive shells is to not expand aliases. So if you install `terminal-notifier` in a different directory, be
-sure to update the path in the script.
+non-interactive shells is to not expand aliases. So update the `terminal_notifier_path` in the script for your environment.
 ```
 pip install emoji
 ```
 Only necessary, if you want to have some fun with emojis in your python script
 
 ### Crontab
-If you don't have crontab already set up on your Mac, in Terminal run
-
-```
-crontab -e
-```
+If you don't have crontab already set up on your Mac, in Terminal run 'crontab -e`
 
 This will open up vim with a new cronfile. In the file, add the below crontab making sure to replace the path to the
 `O_o.py` script for your environment
