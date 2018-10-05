@@ -5,7 +5,7 @@ import os
 import emoji
 
 
-terminal_notifier_path = '/path/to/terminal-notifier'
+terminal_notifier_path = '/path/to/brew/terminal-notifier/install'
 
 
 def alert(title, subtitle, message):
@@ -13,7 +13,8 @@ def alert(title, subtitle, message):
     s = '-subtitle {!r}'.format(subtitle)
     m = '-message {!r}'.format(message)
     o = '-sound default'
-    os.system(terminal_notifier_path+'terminal-notifier {}'.format(' '.join([m, t, s, o])))
+    os.system(terminal_notifier_path+'/terminal-notifier.app/Contents/MacOS/terminal-notifier {}'
+              .format(' '.join([m, t, s, o])))
 
 
 def main():

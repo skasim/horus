@@ -11,7 +11,9 @@ python script, combined with a cron job, kicks off a MacOS notification reminder
 
 ### Prerequisites
 
-To get your environment set up. These instructions are only for Mac OS and the script utilizes Python3
+These instructions are only for Mac OS and the script utilizes Python3. Here are excellent guides to installing
+[Homebrew and Python3](https://docs.python-guide.org/starting/install3/osx/) as well as [Pip and Virtualenv]
+(https://docs.python-guide.org/dev/virtualenvs/)
 
 ```
 brew install terminal-notifier
@@ -24,7 +26,7 @@ sure to update the path in the script.
 ```
 pip install emoji
 ```
-Only necessary, if you want to have some fun with emojis in python
+Only necessary, if you want to have some fun with emojis in your python script
 
 ### Crontab
 If you don't have crontab already set up on your Mac, in Terminal run
@@ -40,15 +42,12 @@ This will open up vim with a new cronfile. In the file, add the below crontab ma
 */20    07-17        *     * MON-FRI     /path/to/O_o.py
 ```
 
-This cron job will run every 20 minutes from 7h00 to 17h00 on weekdays. When you save this update in vim, you will
-see
+This cron job will run every 20 minutes from 7h00 to 17h00 on weekdays. When you save this update in vim, you should see
 ```
 crontab: installing new crontab and you are all set
 ```
-You can view all your crontabs with
-```
-crontab -l
-```
+You can view all your crontabs with `crontab -l`
+
 ### Mac Notification Center
 To enable notifications on Mac go to `System Preferences > Notifications > terminal-notifier`. Update
 terminal-notifier alert style to `Alerts`
